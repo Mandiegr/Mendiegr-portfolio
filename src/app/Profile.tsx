@@ -1,6 +1,5 @@
 'use client';
 import { Element } from 'react-scroll';
-//import { FaHeart } from 'react-icons/fa';
 import { GiCupcake, GiButterfly } from 'react-icons/gi';
 import { BsBalloonHeartFill, BsFlower1 } from 'react-icons/bs';
 import styled from 'styled-components';
@@ -10,6 +9,55 @@ import ExperienceSection from '../components/Experience/index';
 import EducationSection from '../components/Education/index';
 import ProjectsSection from '../components/Projects/index';
 import FooterSection from '../components/Footer/index';
+import FloatingNav from '../components/FloatingNav'; 
+
+const ProfilePage = () => {
+  return (
+    <>
+      <FloatingNav /> 
+      <ProfileContainer>
+        <CuteElement style={{ top: '50px', left: '5%', animationDelay: '0.5s' }}>
+          <BsBalloonHeartFill color="#ff9bb8" />
+        </CuteElement>
+        <CuteElement style={{ top: '100px', right: '8%', animationDelay: '1s' }}>
+          <GiButterfly color="#a5d8ff" />
+        </CuteElement>
+        <CuteElement style={{ bottom: '100px', left: '10%', animationDelay: '1.5s' }}>
+          <GiCupcake color="#ffb3d9" />
+        </CuteElement>
+        <CuteElement style={{ bottom: '150px', right: '12%', animationDelay: '0.8s' }}>
+          <BsFlower1 color="#b5ead7" />
+        </CuteElement>
+
+        <Header />
+
+        <Element name="habilidades" id="habilidades">
+          <SkillsSection />
+        </Element>
+
+        <Element name="experiencia" id="experiencia">
+          <ExperienceSection />
+        </Element>
+
+        <Element name="formacao" id="formacao">
+          <EducationSection />
+        </Element>
+
+        <Element name="projetos" id="projetos">
+          <ProjectsSection />
+        </Element>
+
+        <Element name="footer" id="footer">
+          <FooterSection />
+        </Element>
+      </ProfileContainer>
+    </>
+  );
+};
+
+export default ProfilePage;
+
+
 
 const ProfileContainer = styled.div`
   max-width: 1220px;
@@ -40,45 +88,3 @@ const CuteElement = styled.div`
   }
 `;
 
-const ProfilePage = () => {
-  return (
-    <ProfileContainer>
-      <CuteElement style={{ top: '50px', left: '5%', animationDelay: '0.5s' }}>
-        <BsBalloonHeartFill color="#ff9bb8" />
-      </CuteElement>
-      <CuteElement style={{ top: '100px', right: '8%', animationDelay: '1s' }}>
-        <GiButterfly color="#a5d8ff" />
-      </CuteElement>
-      <CuteElement style={{ bottom: '100px', left: '10%', animationDelay: '1.5s' }}>
-        <GiCupcake color="#ffb3d9" />
-      </CuteElement>
-      <CuteElement style={{ bottom: '150px', right: '12%', animationDelay: '0.8s' }}>
-        <BsFlower1 color="#b5ead7" />
-      </CuteElement>
-
-      <Header />
-
-      <Element name="habilidades">
-        <SkillsSection />
-      </Element>
-
-      <Element name="experiencia">
-        <ExperienceSection />
-      </Element>
-
-      <Element name="formacao">
-        <EducationSection />
-      </Element>
-
-      <Element name="projetos">
-        <ProjectsSection />
-      </Element>
-
-      <Element name="footer">
-        <FooterSection />
-      </Element>
-    </ProfileContainer>
-  );
-};
-
-export default ProfilePage;
